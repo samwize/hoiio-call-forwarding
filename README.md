@@ -42,30 +42,20 @@ You should have the following structure.
 Configure config.php
 ---------------------
 
-There are various configurations.
+There are some configurations needed.
 
 These MUST be changed:
 
 	$HOIIO_APP_ID 		= "";		// Get from http://developer.hoiio.com
 	$HOIIO_ACCESS_TOKEN = "";		// Get from http://developer.hoiio.com
 	$HOIIO_NUMBER 		= "";		// Hoiio Number that you bought eg. +16501234567
-	$MY_MOBILE_NUMBER 	= "";		// Your personal mobile number eg. +16501234567
 	$THIS_SERVER_URL 	= "";		// Your server URL eg. http://www.example.com/myapp/auto-attendant.php
 
 To get a Hoiio App ID, Access Token and Number, read the next section.
 
-You will probably also want to change the voice menu. It is a simple dictionary with the 'key' as **keypad response**, and the 'value' is a 2-element array containing the **action** (such as phone number to transfer to) and the **text to read out**.
+You must add you phone number that you want to forward to:
 
-The default voice menu:
-
-	$directory = array(
-		'1'=>array($MY_MOBILE_NUMBER,	"to reach " . $MY_NAME . "'s office phone"),
-		'2'=>array($MY_MOBILE_NUMBER,	"to reach " . $MY_NAME . "'s mobile phone"),
-		'3'=>array('SMSALERT',			"to send " . $MY_NAME . " an SMS, and he will call you back"),
-		'4'=>array('VOICEMAIL',			"to leave " . $MY_NAME . " a voice mail message"),
-	);
-
-For example, it will read out "Press 1 to reach Junda's office phone.", and if the caller press 1 on the keypad, then it will be transferred to the mobile number. You many change the text and numbers as you like, or add more keys. 
+	$PHONE_TO_RING = "";
 
 
 Hoiio Account
@@ -87,7 +77,7 @@ Deploy
 
 Upload the project folder to any PHP web server.
 
-Call your Hoiio number and you should hear the voice menu!
+Call your Hoiio number and the phone should ring!
 
 
 
